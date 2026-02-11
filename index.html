@@ -63,12 +63,201 @@
                 font-size: 14px;
             }
             
-            /* Ensure tap targets are large enough */
             button, 
             a {
                 min-height: 44px;
                 min-width: 44px;
             }
+        }
+
+        /* ស្ទីលសម្រាប់ប្រព័ន្ធមតិយោបល់ */
+        .comment-system {
+            font-family: 'Khmer OS', 'Kantumruy Pro', sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .comment-system h3 {
+            color: #1a237e;
+            border-bottom: 2px solid #1a237e;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .auth-section {
+            background: linear-gradient(135deg, #1a237e, #283593);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .btn-login {
+            background: white;
+            color: #333;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: bold;
+            width: 100%;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-anonymous {
+            background: #6c757d;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-phone {
+            background: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .comment-input:focus {
+            border-color: #1a237e;
+            outline: none;
+        }
+
+        .btn-submit {
+            flex: 1;
+            background: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-clear {
+            background: #6c757d;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .comment-card {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .comment-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a237e, #283593);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #1a237e;
+        }
+
+        .comment-time {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+        }
+
+        .delete-btn:hover {
+            text-decoration: underline;
+        }
+
+        .phone-login-form {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        .phone-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -157,8 +346,6 @@
                     <div class="hero-image">
                         <div class="image-frame">
                             <img src="/Image/Panha 12.png" alt="ជិម បញ្ញា">
-
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -203,22 +390,22 @@
                                 <h3>ការសិក្សា</h3>
                                 <h4>ផ្នែកយោធា</h4>
                                 <p>- នាយទាហានរង នៃកងរាជអាវុធហត្ថ ជំនាន់ទី៤២</p>
-                                    <p class="p-3"> រយៈពេល ១៨ខែ នៅមជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ </p>
+                                <p class="p-3">រយៈពេល ១៨ខែ នៅមជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ</p>
                                 <p>- ជំនាញឆត្រយោង ជំនាន់ទី២២</p>
-                                    <p class="p-3"> រយៈពេល ៤ខែ នៅសាលាកងពលតូចទ័ពពិសេសឆត្រយោង ៩១១  </p>
+                                <p class="p-3">រយៈពេល ៤ខែ នៅសាលាកងពលតូចទ័ពពិសេសឆត្រយោង ៩១១</p>
                                 <p>- វិក្រឹត្យការនាយទាហានគ្រប់គ្រង</p>
-                                    <p class="p-3"> រយៈពេល ...ខែ នៅមជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ </p>
+                                <p class="p-3">រយៈពេល ...ខែ នៅមជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ</p>
                                 <p>- ហ្វឹកហ្វឺនវគ្គជំនាញមួយចំនួនទៀត</p>
-                                     <p class="p-3"> នៅបញ្ជាការដ្ឋានកងរាជអាវុធហត្ថលើផ្ទៃប្រទេស <br> និងនៅបញ្ជាការដ្ឋានកងរាជអាវុធហត្ថកណ្តាល </p>
+                                <p class="p-3">នៅបញ្ជាការដ្ឋានកងរាជអាវុធហត្ថលើផ្ទៃប្រទេស <br> និងនៅបញ្ជាការដ្ឋានកងរាជអាវុធហត្ថកណ្តាល</p>
 
-                                 <h4>ផ្នែកស៊ីវិល</h4>
+                                <h4>ផ្នែកស៊ីវិល</h4>
                                 <p>- មធ្យមសិក្សាទុតិយភូមិ</p>
                                 <p>- ជំនាញគ្រប់គ្រងសន្តិសុខឯកជន</p>
-                                    <p class="p-3">នៅនាយកដ្ឋានគ្រប់គ្រងសន្តិសុខឯកជន<br> អគ្គស្នងការនគរបាលជាតិ ឆ្នាំ២០២២ ក្រសួងមហាផ្ទៃ </p>
+                                <p class="p-3">នៅនាយកដ្ឋានគ្រប់គ្រងសន្តិសុខឯកជន<br> អគ្គស្នងការនគរបាលជាតិ ឆ្នាំ២០២២ ក្រសួងមហាផ្ទៃ</p>
                                 <p>- វគ្គតាក់តែងលិខិតរដ្ឋបាល និងលិខិតបទដ្ឋានគតិយុត្ត</p>
-                                    <p class="p-3"> នៅសាលាភូមិន្ទរដ្ឋបាល ក្រសួងមុខងារសាធារណៈ </p>
+                                <p class="p-3">នៅសាលាភូមិន្ទរដ្ឋបាល ក្រសួងមុខងារសាធារណៈ</p>
                                 <p>- វគ្គរៀបចំពិធីការ បដិសណ្ឋារកិច្ច និងគ្រប់គ្រងកម្មពិធី</p>
-                                     <p class="p-3"> នៅសាលាភូមិន្ទរដ្ឋបាល ក្រសួងមុខងារសាធារណៈ </p>
+                                <p class="p-3">នៅសាលាភូមិន្ទរដ្ឋបាល ក្រសួងមុខងារសាធារណៈ</p>
                             </div>
                         </div>
                     </div>
@@ -236,7 +423,6 @@
                             &emsp; - នៅឆ្នាំ២០២៣ ខ្ញុំបានផ្លាស់ប្តូរអង្គភាពមកបម្រើការងារ ជាជំនួយការ មូលដ្ឋានកងរាជអាវុធហត្ថក្រុងសំពៅពូន កងរាជអាវុធហត្ថខេត្តកណ្តាល ទទួលការងាររដ្ឋបាល ព្រហ្មទណ្ឌ កសាងនីតិធី បញ្ជូនជនសង្ស័យទៅកាន់តុលាការបានជាច្រើនករណី។<br>
                             &emsp; - ពីខែមីនា ឆ្នាំ២០២៥ ខ្ញុំបានទទួលបញ្ជាពីអង្គភាព មូលដ្ឋានកងរាជអាវុធហត្ថក្រុងសំពៅពូន ឱ្យមកហ្វឹកហ្វឺនចូលរួមការឈរផែន ព្យុហយាត្រា ទិវាបង្កើតកងរាជអាវុធហត្ថ ១៤ កក្កដា ១៩៩៣ - ១៤ កក្កដា ២០២៥។ <br>
                             &emsp; - ចាប់ពីពេលបញ្ចប់ការហ្វឹកហ្វឺននោះ ដល់បច្ចុប្បន្ន ខ្ញុំបន្តបម្រើការងារ ជាជំនួយការ មន្ទីរទំនាក់ទំនងកិច្ចការសាធារណៈ បញ្ចាការដ្ឋានកងរាជអាវុធហត្ថខេត្តកណ្តាល។
-                            
                         </p>
                         
                         <div class="timeline">
@@ -309,8 +495,8 @@
                         </div>
                     </div>
 
-                     <div class="gallery-item">
-                        <img src="/Image/IMG_1531.JPG" alt="2023-2025" >
+                    <div class="gallery-item">
+                        <img src="/Image/IMG_1531.JPG" alt="2023-2025">
                         <div class="gallery-overlay">
                             <div class="gallery-text">
                                 <h3>ឆ្នាំ២០២៣ ដល់ឆ្នាំ២០២៥</h3>
@@ -332,12 +518,12 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section - ផ្នែកមតិយោបល់ -->
         <section class="contact-section" id="contact">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">ទំនាក់ទំនង</h2>
-                    <p class="section-subtitle">ទាក់ទងមកជាមួយខ្ញុំតាមរយៈ</p>
+                    <h2 class="section-title">មតិយោបល់</h2>
+                    <p class="section-subtitle">ចែករំលែកមតិយោបល់របស់អ្នកមកកាន់ខ្ញុំបាន</p>
                 </div>
                 
                 <div class="contact-content">
@@ -358,7 +544,7 @@
                             </div>
                             <div class="contact-details">
                                 <h3>អ៊ីមែល</h3>
-                                <a href="mailto:contact@chimpanha.com">chimpanha1997@gmail.com</a>
+                                <a href="mailto:chimpanha1997@gmail.com">chimpanha1997@gmail.com</a>
                             </div>
                         </div>
                         
@@ -368,26 +554,26 @@
                             </div>
                             <div class="contact-details">
                                 <h3>តេលេក្រាម</h3>
-                                <a href="https://t.me/chimpanha088" target="_blank" aria-label="Telegram">Telegram</a>
+                                <a href="https://t.me/chimpanha088" target="_blank">Telegram</a>
                             </div>
                         </div>
 
-                         <div class="contact-item">
+                        <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fab fa-facebook-f"></i>
                             </div>
                             <div class="contact-details">
                                 <h3>ហ្វេសប៊ុក</h3>
-                                <a href="https://www.facebook.com/chim.panha.1997" target="_blank" aria-label="Facebook">Facebook</a>
+                                <a href="https://www.facebook.com/chim.panha.1997" target="_blank">Facebook</a>
                             </div>
                         </div>
                     </div>
                     
-                   <div class="contact-form">
-                    <!-- ប្រព័ន្ធមតិយោបល់ -->
-                    <div id="my web-cmt-system"></div>
+                    <!-- ប្រព័ន្ធមតិយោបល់ Firebase -->
+                    <div class="contact-form">
+                        <div id="comment-system"></div>
                     </div>
-                
+                </div>
             </div>
         </section>
     </main>
@@ -418,17 +604,17 @@
                 
                 <div class="footer-contact">
                     <h4>ទំនាក់ទំនង</h4>
-                    <a href="https://www.facebook.com/chim.panha.1997" target="_blank" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>Facebook
+                    <a href="https://www.facebook.com/chim.panha.1997" target="_blank">
+                        <i class="fab fa-facebook-f"></i> Facebook
                     </a>
-                    <a href="https://t.me/chimpanha088" target="_blank" aria-label="Telegram">
-                        <i class="fab fa-telegram"></i>Telegram
+                    <a href="https://t.me/chimpanha088" target="_blank">
+                        <i class="fab fa-telegram"></i> Telegram
                     </a>
-                    <a href="mailto:chimpanha1997@gmail.com" aria-label="email">
-                        <i class="fas fa-envelope"></i>Email
+                    <a href="mailto:chimpanha1997@gmail.com">
+                        <i class="fas fa-envelope"></i> Email
                     </a>
-                    <a href="tel:+85592553993" aria-label="ទូរសព្ទ">
-                        <i class="fas fa-phone"></i>Call
+                    <a href="tel:+85592553993">
+                        <i class="fas fa-phone"></i> Call
                     </a>
                 </div>
             </div>
@@ -447,7 +633,7 @@
     <!-- JavaScript Files -->
     <script src="assets/js/main.js"></script>
     
-    <!-- Inline JavaScript for quick functionality -->
+    <!-- Inline JavaScript -->
     <script>
         // Wait for page to load
         window.addEventListener('load', function() {
@@ -470,7 +656,6 @@
                     this.classList.toggle('active');
                 });
                 
-                // Close menu when clicking outside
                 document.addEventListener('click', function(event) {
                     if (!mainNav.contains(event.target) && !mobileToggle.contains(event.target)) {
                         mainNav.classList.remove('active');
@@ -504,13 +689,11 @@
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        // Close mobile menu if open
                         if (mainNav.classList.contains('active')) {
                             mainNav.classList.remove('active');
                             mobileToggle.classList.remove('active');
                         }
                         
-                        // Scroll to target
                         window.scrollTo({
                             top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
@@ -518,8 +701,6 @@
                     }
                 });
             });
-            
-           
             
             // Lazy loading for images
             if ('loading' in HTMLImageElement.prototype) {
@@ -529,107 +710,287 @@
                 });
             }
         });
-        
-        // Handle page visibility for mobile performance
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                // Page is hidden - reduce animations
-            } else {
-                // Page is visible
-            }
-        });
     </script>
 
-    <!-- ដាក់នៅខាងចុងបំផុតនៃ <body> មុនបិទ </body> -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
 
-<script>
-   // 1. Firebase Config ពិតប្រាកដរបស់អ្នក
-const firebaseConfig = {
-  apiKey: "AIzaSyBAPjAmSnNC8U_YZiPV-g9Gk5B7YvruMT8",
-  authDomain: "my-website-5a599.firebaseapp.com",
-  projectId: "my-website-5a599",
-  storageBucket: "my-website-5a599.firebasestorage.app",
-  messagingSenderId: "489611180161",
-  appId: "1:40916180161:web:613ff431b1151a3f77cc00",
-};
+    <!-- Firebase Comment System -->
+    <script>
+        // 1. Firebase Config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBAPjAmSnNC8U_YZiPV-g9Gk5B7YvruMT8",
+            authDomain: "my-website-5a599.firebaseapp.com",
+            projectId: "my-website-5a599",
+            storageBucket: "my-website-5a599.firebasestorage.app",
+            messagingSenderId: "489611180161",
+            appId: "1:40916180161:web:613ff431b1151a3f77cc00",
+        };
 
-// 2. ចាប់ផ្តើម Firebase (កុំប្រើ app variable)
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const auth = firebase.auth();
+        // 2. Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
 
-    // 3. បង្កើតប្រព័ន្ធ Comment សាមញ្ញ
-    document.getElementById('comment-system').innerHTML = `
-        <div style="font-family: Khmer OS, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h3>មតិយោបល់</h3>
-            <div id="auth"></div>
-            <div id="form" style="display:none;">
-                <textarea id="comment" rows="3" style="width:100%; padding:10px; margin:10px 0;"></textarea>
-                <button onclick="postComment()" style="background:#28a745; color:white; padding:10px 20px; border:none; border-radius:5px;">ផ្ញើមតិ</button>
+        // 3. Create Comment System HTML
+        document.getElementById('comment-system').innerHTML = `
+            <div class="comment-system">
+                <h3>
+                    <i class="fas fa-comments"></i> មតិយោបល់
+                </h3>
+                
+                <div id="auth-section" class="auth-section"></div>
+                
+                <div id="form-container" style="display:none; margin-bottom:25px;">
+                    <textarea id="comment-text" class="comment-input" rows="3" placeholder="សរសេរមតិយោបល់របស់អ្នក..."></textarea>
+                    <div style="display:flex; gap:10px;">
+                        <button onclick="postComment()" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> ផ្ញើមតិ
+                        </button>
+                        <button onclick="clearComment()" class="btn-clear">
+                            <i class="fas fa-times"></i> សម្អាត
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="comments-container">
+                    <div style="text-align:center; padding:30px; color:#666;">
+                        <i class="fas fa-spinner fa-spin"></i> កំពុងផ្ទុកមតិយោបល់...
+                    </div>
+                </div>
             </div>
-            <div id="comments"></div>
-        </div>
-    `;
+        `;
 
-    // 4. ចូលប្រើជាមួយ Google
-    function login() {
-        auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    }
+        // 4. Login with Google
+        window.loginWithGoogle = function() {
+            const provider = new firebase.auth.GoogleAuthProvider();
+            auth.signInWithPopup(provider)
+                .catch(error => alert('ចូលមិនបាន: ' + error.message));
+        }
 
-    // 5. ចាកចេញ
-    function logout() {
-        auth.signOut();
-    }
+        // 5. Login Anonymously (no email/phone required)
+        window.loginAnonymously = function() {
+            auth.signInAnonymously()
+                .catch(error => alert('ចូលមិនបាន: ' + error.message));
+        }
 
-    // 6. ផ្ញើមតិ
-    window.postComment = function() {
-        const text = document.getElementById('comment').value;
-        if (text && currentUser) {
+        // 6. Show Phone Login Form
+        window.showPhoneLogin = function() {
+            document.getElementById('phone-login-form').style.display = 'block';
+        }
+
+        // 7. Login with Phone
+        window.loginWithPhone = function() {
+            const phoneNumber = document.getElementById('phone-number').value;
+            if (!phoneNumber) {
+                alert('សូមបញ្ចូលលេខទូរសព្ទ');
+                return;
+            }
+            
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('auth-section', {
+                'size': 'invisible',
+                'callback': () => {}
+            });
+            
+            auth.signInWithPhoneNumber(phoneNumber, window.recaptchaVerifier)
+                .then(confirmationResult => {
+                    const code = prompt('សូមបញ្ចូលលេខកូដដែលទទួលបាន:');
+                    if (code) return confirmationResult.confirm(code);
+                })
+                .catch(error => alert('ចូលមិនបាន: ' + error.message));
+        }
+
+        // 8. Logout
+        window.logout = function() {
+            auth.signOut();
+        }
+
+        // 9. Post Comment
+        window.postComment = function() {
+            const text = document.getElementById('comment-text').value.trim();
+            if (!text) {
+                alert('សូមសរសេរមតិយោបល់');
+                return;
+            }
+            
+            if (!currentUser) {
+                alert('សូមចូលប្រើមុន');
+                return;
+            }
+            
             db.collection('comments').add({
                 text: text,
-                userName: currentUser.displayName || currentUser.email,
+                userName: currentUser.displayName || 
+                         currentUser.email || 
+                         currentUser.phoneNumber || 
+                         'អ្នកប្រើប្រាស់',
+                userEmail: currentUser.email || '',
+                userPhone: currentUser.phoneNumber || '',
                 userId: currentUser.uid,
+                isAnonymous: currentUser.isAnonymous || false,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             });
-            document.getElementById('comment').value = '';
+            
+            document.getElementById('comment-text').value = '';
         }
-    }
 
-    // 7. ត្រួតពិនិត្យអ្នកប្រើ
-    let currentUser = null;
-    auth.onAuthStateChanged(user => {
-        currentUser = user;
-        const authDiv = document.getElementById('auth');
-        const formDiv = document.getElementById('form');
-        
-        if (user) {
-            authDiv.innerHTML = `សួស្តី ${user.displayName || user.email} <button onclick="logout()" style="margin-left:10px;">ចាកចេញ</button>`;
-            formDiv.style.display = 'block';
-        } else {
-            authDiv.innerHTML = `<button onclick="login()" style="background:#4285f4; color:white; padding:10px 20px; border:none; border-radius:5px;">ចូលជាមួយ Google</button>`;
-            formDiv.style.display = 'none';
+        // 10. Clear Comment
+        window.clearComment = function() {
+            document.getElementById('comment-text').value = '';
         }
-    });
 
-    // 8. ផ្ទុកមតិ
-    db.collection('comments').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
-        let html = '';
-        snapshot.forEach(doc => {
-            const data = doc.data();
-            html += `
-                <div style="border:1px solid #ddd; padding:15px; margin:10px 0; border-radius:5px;">
-                    <strong>${data.userName || 'អ្នកប្រើប្រាស់'}</strong>
-                    <p style="margin:10px 0;">${data.text}</p>
-                    <small style="color:#999;">${data.timestamp?.toDate().toLocaleString() || ''}</small>
-                </div>
-            `;
+        // 11. Delete Comment
+        window.deleteComment = function(commentId) {
+            if (!currentUser) return;
+            if (confirm('តើអ្នកប្រាកដថាចង់លុបមតិនេះទេ?')) {
+                db.collection('comments').doc(commentId).delete()
+                    .catch(error => alert('លុបមិនបាន: ' + error.message));
+            }
+        }
+
+        // 12. Update Auth UI
+        function updateAuthUI(user) {
+            const authSection = document.getElementById('auth-section');
+            const formContainer = document.getElementById('form-container');
+            
+            if (user) {
+                const displayName = user.displayName || user.email || user.phoneNumber || 'អ្នកប្រើប្រាស់';
+                const photoURL = user.photoURL;
+                const firstChar = displayName.charAt(0).toUpperCase();
+                
+                authSection.innerHTML = `
+                    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:15px;">
+                        <div style="display:flex; align-items:center; gap:15px;">
+                            ${photoURL ? 
+                                `<img src="${photoURL}" style="width:55px; height:55px; border-radius:50%; border:2px solid white; object-fit:cover;">` : 
+                                `<div style="width:55px; height:55px; border-radius:50%; background:#ffc107; color:#1a237e; display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:bold; border:2px solid white;">${firstChar}</div>`
+                            }
+                            <div>
+                                <div style="font-size:18px; font-weight:bold;">${displayName}</div>
+                                <div style="font-size:14px; opacity:0.9;">${user.email || user.phoneNumber || 'បានចូលដោយអនាមិក'}</div>
+                            </div>
+                        </div>
+                        <button onclick="logout()" style="background:#dc3545; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; display:flex; align-items:center; gap:8px;">
+                            <i class="fas fa-sign-out-alt"></i> ចាកចេញ
+                        </button>
+                    </div>
+                `;
+                formContainer.style.display = 'block';
+            } else {
+                authSection.innerHTML = `
+                    <div style="text-align:center;">
+                        <i class="fas fa-user-circle" style="font-size:48px; margin-bottom:15px;"></i>
+                        <h4 style="margin-bottom:20px; color:white;">ជ្រើសរើសវិធីចូលប្រើ</h4>
+                        <div style="display:flex; flex-direction:column; gap:10px; max-width:300px; margin:0 auto;">
+                            <button onclick="loginWithGoogle()" class="btn-login">
+                                <i class="fab fa-google" style="color:#4285f4;"></i> ចូលជាមួយ Google
+                            </button>
+                            <button onclick="loginAnonymously()" class="btn-anonymous">
+                                <i class="fas fa-user-secret"></i> ចូលដោយអនាមិក
+                            </button>
+                            <button onclick="showPhoneLogin()" class="btn-phone">
+                                <i class="fas fa-phone"></i> ចូលជាមួយលេខទូរសព្ទ
+                            </button>
+                        </div>
+                        <div id="phone-login-form" class="phone-login-form">
+                            <input type="tel" id="phone-number" class="phone-input" placeholder="លេខទូរសព្ទ ឧ. +85512345678">
+                            <button onclick="loginWithPhone()" style="background:#ffc107; color:#1a237e; padding:12px; border:none; border-radius:5px; cursor:pointer; width:100%; font-weight:bold;">
+                                ផ្ញើលេខកូដ
+                            </button>
+                        </div>
+                    </div>
+                `;
+                formContainer.style.display = 'none';
+            }
+        }
+
+        // 13. Load Comments
+        function loadComments() {
+            db.collection('comments').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+                let html = '';
+                
+                if (snapshot.empty) {
+                    html = '<div style="text-align:center; padding:30px; color:#666;"><i class="fas fa-comment-slash"></i> មិនទាន់មានមតិនៅឡើយទេ</div>';
+                } else {
+                    snapshot.forEach(doc => {
+                        const data = doc.data();
+                        const date = data.timestamp?.toDate() || new Date();
+                        const formattedDate = formatDate(date);
+                        const firstChar = (data.userName || 'អ្នកប្រើ').charAt(0).toUpperCase();
+                        
+                        html += `
+                            <div class="comment-card">
+                                <div style="display:flex; align-items:center; margin-bottom:15px;">
+                                    <div class="comment-avatar">${firstChar}</div>
+                                    <div>
+                                        <div class="comment-author">${data.userName || 'អ្នកប្រើប្រាស់'}</div>
+                                        <div class="comment-time">
+                                            <i class="far fa-clock"></i> ${formattedDate}
+                                            ${data.isAnonymous ? '<span style="margin-left:10px; background:#f0f0f0; padding:2px 8px; border-radius:12px;">អនាមិក</span>' : ''}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="font-size:16px; line-height:1.6; color:#333; padding-left:57px;">
+                                    ${escapeHtml(data.text)}
+                                </div>
+                                ${currentUser && currentUser.uid === data.userId ? `
+                                    <div style="margin-top:10px; padding-left:57px;">
+                                        <button onclick="deleteComment('${doc.id}')" class="delete-btn">
+                                            <i class="fas fa-trash"></i> លុប
+                                        </button>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `;
+                    });
+                }
+                
+                document.getElementById('comments-container').innerHTML = html;
+            }, error => {
+                console.error('Error loading comments:', error);
+                document.getElementById('comments-container').innerHTML = `
+                    <div style="text-align:center; padding:30px; color:#dc3545;">
+                        <i class="fas fa-exclamation-triangle"></i> មិនអាចផ្ទុកមតិយោបល់បានទេ។
+                    </div>
+                `;
+            });
+        }
+
+        // 14. Escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 15. Format Date
+        function formatDate(date) {
+            const now = new Date();
+            const diff = now - date;
+            
+            if (diff < 60000) return 'ទើបតែប៉ុន្មានវិនាទីមុន';
+            if (diff < 3600000) return `${Math.floor(diff / 60000)} នាទីមុន`;
+            if (diff < 86400000) return `${Math.floor(diff / 3600000)} ម៉ោងមុន`;
+            if (diff < 604800000) return `${Math.floor(diff / 86400000)} ថ្ងៃមុន`;
+            
+            return date.toLocaleDateString('km-KH', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        // 16. Auth State Observer
+        let currentUser = null;
+        auth.onAuthStateChanged(user => {
+            currentUser = user;
+            updateAuthUI(user);
+            loadComments();
         });
-        document.getElementById('comments').innerHTML = html || 'មិនទាន់មានមតិនៅឡើយទេ';
-    });
-</script>
-    
+    </script>
 </body>
 </html>
