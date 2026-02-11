@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <!-- Meta Information សំខាន់ៗ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- ព័ត៌មានទំព័រ -->
+    <title>Information CHIM PANHA</title>
+    <meta name="description" content="គេហទំព័រផ្ទាល់ខ្លួនរបស់ ជិម បញ្ញា មន្ត្រីកងរាជអាវុធហត្ថ">
+    <meta name="keywords" content="ជិម បញ្ញា, កងរាជអាវុធហត្ថ, កម្ពុជា, ប្រវត្តិរូប">
+    <meta name="author" content="ជិម បញ្ញា">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/Image/Panha 13.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    
+    <!-- CSS សំខាន់ៗ -->
+    <link rel="stylesheet" href="/main.css">
+    
+    <!-- Font Awesome សម្រាប់រូបតំណាង -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts សម្រាប់អក្សរខ្មែរ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Bayon&display=swap" rel="stylesheet">
+    
+    <!-- CSS បន្ថែមសម្រាប់ទូរសព្ទដៃ -->
+    <style>
+        /* Loading Animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .spinner {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Accessibility for mobile */
+        @media (max-width: 768px) {
+            :root {
+                font-size: 14px;
+            }
+            
+            /* Ensure tap targets are large enough */
+            button, 
+            a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="page-loader" id="pageLoader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <img class="icon-img" src="/Image/Panha 13.png" alt="icon">
+                        </div>
+                        <div class="logo-text">
+                            <h1>ជិម បញ្ញា</h1>
+                            <p>ជាជំនួយការ <br>មន្ទីរទំនាក់ទំនងកិច្ចការសាធារណៈ <br>កងរាជអាវុធហត្ថខេត្តកណ្តាល</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" id="mobileToggle" aria-label="បើកម៉ឺនុយ">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> ទំព័រដើម</a></li>
+                        <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> អំពីខ្ញុំ</a></li>
+                        <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i> វិចិត្រសាល</a></li>
+                        <li><a href="#contact" class="nav-link"><i class="fas fa-phone"></i> ទំនាក់ទំនង</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Social Media Links -->
+                <div class="social-media">
+                    <a href="https://www.facebook.com/chim.panha.1997" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://t.me/chimpanha088" target="_blank" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="mailto:chimpanha1997@gmail.com" aria-label="email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+85592553993" aria-label="ទូរសព្ទ">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2 class="hero-title">សួស្តី! <span class="highlight">ខ្ញុំឈ្មោះ ជិម បញ្ញា</span></h2>
+                        <p class="hero-subtitle">អត្តលេខ: ១៩៣៩៦១</p>
+                        <p class="hero-subtitle">ឋានន្តរសក្តិ: អនុសេនីយ៍ត្រី</p>
+                        <p class="hero-subtitle">ជាមន្ត្រីកងរាជអាវុធហត្ថ</p>
+                        <p class="hero-description">
+                            បម្រើការងារនៅបញ្ចាការដ្ឋានកងរាជអាវុធហត្ថខេត្តកណ្តាល
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> ទំនាក់ទំនងជាមួយខ្ញុំ
+                            </a>
+                            <a href="#about" class="btn btn-secondary">
+                                <i class="fas fa-user"></i> ស្គាល់ខ្ញុំបន្ថែម
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-frame">
+                            <img src="/Image/Panha 12.png" alt="ជិម បញ្ញា">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">អំពីខ្ញុំ</h2>
+                    <p class="section-subtitle">ប្រវត្តិសិក្សា និងបទពិសោធន៍ការងាររបស់ខ្ញុំ</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-info">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>តួនាទី</h3>
+                                <p class="p-3">ជំនួយការ មន្ទីរទំនាក់ទំនងកិច្ចការសាធារណៈ <br> កងរាជអាវុធហត្ថខេត្តកណ្តាល</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>ទីតាំង</h3>
+                                <p>បញ្ចាការដ្ឋានកងរាជអាវុធហត្ថខេត្តកណ្តាល</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>ការសិក្សា</h3>
+                                <h4>ផ្នែកយោធា</h4>
+                                <p>- នាយទាហានរង នៃកងរាជអាវុធហត្ថ ជំនាន់ទី៤២</p>
+                                    <p class="p-3"> រយៈពេល ១៨ខែ នៅមជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ </p>
+                                <p>- ជំនាញឆត្រយោង ជំនាន់ទី២២</p>
+                                    <p class="p-3"> រយៈពេល ៤ខែ នៅសាលាកងពលតូចទ័ពពិសេសឆត្រយោង ៩១១  </p>
+                                <p>- វិក្រឹត្យការនាយទាហានគ្រប់គ្រង</p>
+                                    <p class="p-3"> រយៈពេល ...ខែ នៅមជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ </p>
+                                <p>- ហ្វឹកហ្វឺនវគ្គជំនាញមួយចំនួនទៀត</p>
+                                     <p class="p-3"> នៅបញ្ជាការដ្ឋានកងរាជអាវុធហត្ថលើផ្ទៃប្រទេស <br> និងនៅបញ្ជាការដ្ឋានកងរាជអាវុធហត្ថកណ្តាល </p>
+
+                                 <h4>ផ្នែកស៊ីវិល</h4>
+                                <p>- មធ្យមសិក្សាទុតិយភូមិ</p>
+                                <p>- ជំនាញគ្រប់គ្រងសន្តិសុខឯកជន</p>
+                                    <p class="p-3">នៅនាយកដ្ឋានគ្រប់គ្រងសន្តិសុខឯកជន<br> អគ្គស្នងការនគរបាលជាតិ ឆ្នាំ២០២២ ក្រសួងមហាផ្ទៃ </p>
+                                <p>- វគ្គតាក់តែងលិខិតរដ្ឋបាល និងលិខិតបទដ្ឋានគតិយុត្ត</p>
+                                    <p class="p-3"> នៅសាលាភូមិន្ទរដ្ឋបាល ក្រសួងមុខងារសាធារណៈ </p>
+                                <p>- វគ្គរៀបចំពិធីការ បដិសណ្ឋារកិច្ច និងគ្រប់គ្រងកម្មពិធី</p>
+                                     <p class="p-3"> នៅសាលាភូមិន្ទរដ្ឋបាល ក្រសួងមុខងារសាធារណៈ </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-text">
+                        <h3>ប្រវត្តិ និងបទពិសោធន៍ការងារ</h3>
+                        <p class="p-4">
+                            &emsp; - ខ្ញុំបានចូលបម្រើការងារ ជាកងរាជអាវុធហត្ថចាប់តាំងពីថ្ងៃទី២៧ ខែកក្កដា ឆ្នាំ២០១៦ ដោយបានឆ្លងកាត់ការហ្វឹកហ្វឺនជាច្រើនវគ្គ។ <br>
+                            &emsp; - ពេលបញ្ចប់ការសិក្សា ក្នុងឆ្នាំ២០១៨ ខ្ញុំបានបន្តបម្រើការងារ នៅវរសេនាតូចអន្តរាគមន៍ ដោយមានតួនាទីជា ជំនួយការស្រាវជ្រាវព័ត៌មានសន្តិសុខ ក្នុងឋានន្តរសក្តិ ព្រិន្ទបាលឯក។ <br>
+                            &emsp; - ដល់ឆ្នាំ២០១៩ ខ្ញុំទទួលបានបទបញ្ជាឱ្យចុះបេសកកម្ម ជំនួយការងារយោធាចារ្យហ្វឹកហ្វឺន សិក្ខាកាម នាយទាហានរងនៃកងរាជអាវុធហត្ថជំនាន់ទី៤៣ នៅមជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ។ <br>
+                            &emsp; - ចុងឆ្នាំ២០១៩ ខ្ញុំបានចូលហ្វឹកហ្វឺនវគ្គវិក្រឹត្យការនាយទាហានគ្រប់គ្រង នៅមជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ។ <br>
+                            &emsp; - នៅឆ្នាំ២០២០ ខ្ញុំបានតទួលការងារជានាយទាហានគ្រប់គ្រង តួនាទីជា មេបញ្ជាការរង កងអនុសេនាតូចទី២ កងអនុសេនាធំទី១ វរសេនាតូចសិក្សា។ <br>
+                            &emsp; - នៅឆ្នាំ២០២០ ដដែលនេះ ខ្ញុំក៏ទទួលបេសកកម្មឱ្យទៅបម្រើការងារជាជំនួយការ <b>លោកឧត្តមសេនីយ៍ទោ ណឹម សុវិសាល</b> នាយសេនាធិការរង កងរាជអាវុធហត្ថលើផ្ទៃប្រទេស។ <br>
+                            &emsp; - បន្ទាប់មកខ្ញុំក៏ទទួលបេសកម្មបន្ថែមជាជំនួយការ <b>លោកឧត្តមសេនីយ៍ទោ ស សំបូរធន</b> នាយសេនាធិការ កងរាជអាវុធហត្ថលើផ្ទៃប្រទេស។<br>
+                            &emsp; - នៅឆ្នាំ២០២៣ ខ្ញុំបានផ្លាស់ប្តូរអង្គភាពមកបម្រើការងារ ជាជំនួយការ មូលដ្ឋានកងរាជអាវុធហត្ថក្រុងសំពៅពូន កងរាជអាវុធហត្ថខេត្តកណ្តាល ទទួលការងាររដ្ឋបាល ព្រហ្មទណ្ឌ កសាងនីតិធី បញ្ជូនជនសង្ស័យទៅកាន់តុលាការបានជាច្រើនករណី។<br>
+                            &emsp; - ពីខែមីនា ឆ្នាំ២០២៥ ខ្ញុំបានទទួលបញ្ជាពីអង្គភាព មូលដ្ឋានកងរាជអាវុធហត្ថក្រុងសំពៅពូន ឱ្យមកហ្វឹកហ្វឺនចូលរួមការឈរផែន ព្យុហយាត្រា ទិវាបង្កើតកងរាជអាវុធហត្ថ ១៤ កក្កដា ១៩៩៣ - ១៤ កក្កដា ២០២៥។ <br>
+                            &emsp; - ចាប់ពីពេលបញ្ចប់ការហ្វឹកហ្វឺននោះ ដល់បច្ចុប្បន្ន ខ្ញុំបន្តបម្រើការងារ ជាជំនួយការ មន្ទីរទំនាក់ទំនងកិច្ចការសាធារណៈ បញ្ចាការដ្ឋានកងរាជអាវុធហត្ថខេត្តកណ្តាល។
+                            
+                        </p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">ឆ្នាំ២០១៦ ដល់ឆ្នាំ២០១៨</div>
+                                <div class="timeline-content">
+                                    <h4>ការហ្វឹកហ្វឺនមូលដ្ឋាន និងវគ្គជំនាញ</h4>
+                                    <p>សិក្សានៅ <br>
+                                        មជ្ឈមណ្ឌលហ្វឹកហ្វឺនកងរាជអាវុធហត្ថភ្នំជំរាយ <br>
+                                        សាលាកងពលតូចទ័ពពិសេសឆត្រយោង ៩១១</p>
+                                </div>
+                            </div>
+             
+                            <div class="timeline-item">
+                                <div class="timeline-year">ឆ្នាំ២០១៨ ដល់ឆ្នាំ២០២៣</div>
+                                <div class="timeline-content">
+                                    <h4>បម្រើការងារ</h4>
+                                    <p>នាយទាហាន កងអន្តរាគន៍ <br>បញ្ជាការដ្ឋានកងរាជអាវុធហត្ថលើផ្ទៃប្រទេស</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-year">ឆ្នាំ២០២៣ ដល់ឆ្នាំ២០២៥</div>
+                                <div class="timeline-content">
+                                    <h4>បម្រើការងារ</h4>
+                                    <p>ជំនួយការ មូលដ្ឋានកងរាជអាវុធហត្ថក្រុងសំពៅពូន <br> បញ្ចាការដ្ឋានកងរាជអាវុធហត្ថខេត្តកណ្តាល</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-year">បច្ចុប្បន្ន</div>
+                                <div class="timeline-content">
+                                    <h4>ការងារបច្ចុប្បន្ន</h4>
+                                    <p>ជំនួយការ មន្ទីរទំនាក់ទំនងកិច្ចការសាធារណៈ<br> បញ្ជាការដ្ឋានកងរាជអាវុធហត្ថខេត្តកណ្តាល</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">វិចិត្រសាល</h2>
+                    <p class="section-subtitle">រូបភាពពីការងារ និងការហ្វឹកហ្វឺនរបស់ខ្ញុំ</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="/Image/2018.a.JPG" alt="2016-2018">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">
+                                <h3>ឆ្នាំ២០១៦ ដល់ឆ្នាំ២០១៨</h3>
+                                <p>ការហ្វឹកហ្វឺនមូលដ្ឋាន និងវគ្គជំនាញ</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="/Image/00712951-2A51-4956-9DE2-85F75B9C06AC.JPG" alt="2018-2023">
+                        <img src="/Image/A9B5A42E-91D3-417B-9408-05723077FDBD.JPG" alt="2018-2023">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">
+                                <h3>ឆ្នាំ២០១៨ ដល់ឆ្នាំ២០២៣</h3>
+                                <p>បម្រើការងារ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="gallery-item">
+                        <img src="/Image/IMG_1531.JPG" alt="2023-2025" >
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">
+                                <h3>ឆ្នាំ២០២៣ ដល់ឆ្នាំ២០២៥</h3>
+                                <p>បម្រើការងារ</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="/Image/IMG_0772.JPG" alt="now 2026">
+                        <div class="gallery-overlay">
+                            <div class="gallery-text">
+                                <h3>បច្ចុប្បន្ន</h3>
+                                <p>ជំនួយការ មន្ទីរទំនាក់ទំនងកិច្ចការសាធារណៈ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">ទំនាក់ទំនង</h2>
+                    <p class="section-subtitle">ទាក់ទងមកជាមួយខ្ញុំតាមរយៈ</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>ទូរសព្ទ</h3>
+                                <a href="tel:+85592553993">+855 92 553 993</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>អ៊ីមែល</h3>
+                                <a href="mailto:contact@chimpanha.com">chimpanha1997@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-telegram"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>តេលេក្រាម</h3>
+                                <a href="https://t.me/chimpanha088" target="_blank" aria-label="Telegram">Telegram</a>
+                            </div>
+                        </div>
+
+                         <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>ហ្វេសប៊ុក</h3>
+                                <a href="https://www.facebook.com/chim.panha.1997" target="_blank" aria-label="Facebook">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <h2>ផ្ញើសារ</h2>
+                            <div class="form-group">
+                                <input type="text" id="name" placeholder="ឈ្មោះពេញ" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" placeholder="អ៊ីមែល" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="tel" id="phone" placeholder="លេខទូរសព្ទ">
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea id="message" rows="5" placeholder="សាររបស់អ្នក..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> ផ្ញើសារ
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <img class="icon-img" src="/Image/Panha 13.png" alt="icon">
+                    </div>
+                    <div class="footer-text">
+                        <h3>ជិម បញ្ញា</h3>
+                        <p>មន្ត្រីកងរាជអាវុធហត្ថ</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>តំណភ្ជាប់</h4>
+                    <ul>
+                        <li><a href="#home">ទំព័រដើម</a></li>
+                        <li><a href="#about">អំពីខ្ញុំ</a></li>
+                        <li><a href="#gallery">វិចិត្រសាល</a></li>
+                        <li><a href="#contact">ទំនាក់ទំនង</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>ទំនាក់ទំនង</h4>
+                    <a href="https://www.facebook.com/chim.panha.1997" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>Facebook
+                    </a>
+                    <a href="https://t.me/chimpanha088" target="_blank" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>Telegram
+                    </a>
+                    <a href="mailto:chimpanha1997@gmail.com" aria-label="email">
+                        <i class="fas fa-envelope"></i>Email
+                    </a>
+                    <a href="tel:+85592553993" aria-label="ទូរសព្ទ">
+                        <i class="fas fa-phone"></i>Call
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; ២០២៦ ជិម បញ្ញា. រក្សាសិទ្ធិគ្រប់យ៉ាង.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="ត្រឡប់ទៅកំពូល">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Inline JavaScript for quick functionality -->
+    <script>
+        // Wait for page to load
+        window.addEventListener('load', function() {
+            // Hide loading screen
+            const loader = document.getElementById('pageLoader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Mobile menu toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileToggle && mainNav) {
+                mobileToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mainNav.contains(event.target) && !mobileToggle.contains(event.target)) {
+                        mainNav.classList.remove('active');
+                        mobileToggle.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            mobileToggle.classList.remove('active');
+                        }
+                        
+                        // Scroll to target
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        message: document.getElementById('message').value
+                    };
+                    
+                    // Show success message
+                    alert('សូមអរគុណ! សាររបស់អ្នកត្រូវបានផ្ញើដោយជោគជ័យ។');
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+            
+            // Lazy loading for images
+            if ('loading' in HTMLImageElement.prototype) {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            }
+        });
+        
+        // Handle page visibility for mobile performance
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // Page is hidden - reduce animations
+            } else {
+                // Page is visible
+            }
+        });
+    </script>
+</body>
+</html>
