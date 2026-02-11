@@ -384,6 +384,8 @@
                     </div>
                     
                     <div class="contact-form">
+                        <!-- ដាក់នៅក្នុង <body> ត្រង់កន្លែងដែលចង់ឱ្យមានមតិយោបល់ -->
+                        <div id="comment-system"></div>
                         <form id="contactForm">
                             <h2>ផ្ញើសារ</h2>
                             <div class="form-group">
@@ -579,5 +581,97 @@
             }
         });
     </script>
+
+    <!-- ដាក់នៅខាងចុងបំផុតនៃ <body> មុនបិទ </body> -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
+<script>
+    // 1. Firebase Config របស់អ្នក
+    const firebaseConfig = {
+        apiKey: "AIzaSyBpz7F7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y",
+        authDomain: "my-website-5a599.firebaseapp.com",
+        projectId: "my-website-5a599",
+        storageBucket: "my-website-5a599.appspot.com",
+        messagingSenderId: "409161180161",
+        appId: "1:409161180161:web:abc123def456..."
+    };
+
+    // 2. ចាប់ផ្តើម Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+
+    // 3. បង្កើតប្រព័ន្ធ Comment សាមញ្ញ
+    document.getElementById('comment-system').innerHTML = `
+        <div style="font-family: Khmer OS, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h3>មតិយោបល់</h3>
+            <div id="auth"></div>
+            <div id="form" style="display:none;">
+                <textarea id="comment" rows="3" style="width:100%; padding:10px; margin:10px 0;"></textarea>
+                <button onclick="postComment()" style="background:#28a745; color:white; padding:10px 20px; border:none; border-radius:5px;">ផ្ញើមតិ</button>
+            </div>
+            <div id="comments"></div>
+        </div>
+    `;
+
+    // 4. ចូលប្រើជាមួយ Google
+    function login() {
+        auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    }
+
+    // 5. ចាកចេញ
+    function logout() {
+        auth.signOut();
+    }
+
+    // 6. ផ្ញើមតិ
+    window.postComment = function() {
+        const text = document.getElementById('comment').value;
+        if (text && currentUser) {
+            db.collection('comments').add({
+                text: text,
+                userName: currentUser.displayName || currentUser.email,
+                userId: currentUser.uid,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            });
+            document.getElementById('comment').value = '';
+        }
+    }
+
+    // 7. ត្រួតពិនិត្យអ្នកប្រើ
+    let currentUser = null;
+    auth.onAuthStateChanged(user => {
+        currentUser = user;
+        const authDiv = document.getElementById('auth');
+        const formDiv = document.getElementById('form');
+        
+        if (user) {
+            authDiv.innerHTML = `សួស្តី ${user.displayName || user.email} <button onclick="logout()" style="margin-left:10px;">ចាកចេញ</button>`;
+            formDiv.style.display = 'block';
+        } else {
+            authDiv.innerHTML = `<button onclick="login()" style="background:#4285f4; color:white; padding:10px 20px; border:none; border-radius:5px;">ចូលជាមួយ Google</button>`;
+            formDiv.style.display = 'none';
+        }
+    });
+
+    // 8. ផ្ទុកមតិ
+    db.collection('comments').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
+        let html = '';
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            html += `
+                <div style="border:1px solid #ddd; padding:15px; margin:10px 0; border-radius:5px;">
+                    <strong>${data.userName || 'អ្នកប្រើប្រាស់'}</strong>
+                    <p style="margin:10px 0;">${data.text}</p>
+                    <small style="color:#999;">${data.timestamp?.toDate().toLocaleString() || ''}</small>
+                </div>
+            `;
+        });
+        document.getElementById('comments').innerHTML = html || 'មិនទាន់មានមតិនៅឡើយទេ';
+    });
+</script>
+    
 </body>
 </html>
