@@ -383,33 +383,11 @@
                         </div>
                     </div>
                     
-                    <div class="contact-form">
-                        <!-- ដាក់នៅក្នុង <body> ត្រង់កន្លែងដែលចង់ឱ្យមានមតិយោបល់ -->
-                        <div id="comment-system"></div>
-                        <form id="contactForm">
-                            <h2>ផ្ញើសារ</h2>
-                            <div class="form-group">
-                                <input type="text" id="name" placeholder="ឈ្មោះពេញ" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="email" id="email" placeholder="អ៊ីមែល" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <input type="tel" id="phone" placeholder="លេខទូរសព្ទ">
-                            </div>
-                            
-                            <div class="form-group">
-                                <textarea id="message" rows="5" placeholder="សាររបស់អ្នក..." required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i> ផ្ញើសារ
-                            </button>
-                        </form>
+                   <div class="contact-form">
+                    <!-- ប្រព័ន្ធមតិយោបល់ -->
+                    <div id="comment-system"></div>
                     </div>
-                </div>
+                
             </div>
         </section>
     </main>
@@ -541,27 +519,7 @@
                 });
             });
             
-            // Contact form submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form data
-                    const formData = {
-                        name: document.getElementById('name').value,
-                        email: document.getElementById('email').value,
-                        phone: document.getElementById('phone').value,
-                        message: document.getElementById('message').value
-                    };
-                    
-                    // Show success message
-                    alert('សូមអរគុណ! សាររបស់អ្នកត្រូវបានផ្ញើដោយជោគជ័យ។');
-                    
-                    // Reset form
-                    contactForm.reset();
-                });
-            }
+           
             
             // Lazy loading for images
             if ('loading' in HTMLImageElement.prototype) {
@@ -588,20 +546,20 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
 
 <script>
-    // 1. Firebase Config របស់អ្នក
-    const firebaseConfig = {
-        apiKey: "AIzaSyBpz7F7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y7Y",
-        authDomain: "my-website-5a599.firebaseapp.com",
-        projectId: "my-website-5a599",
-        storageBucket: "my-website-5a599.appspot.com",
-        messagingSenderId: "409161180161",
-        appId: "1:409161180161:web:abc123def456..."
-    };
+   // 1. Firebase Config ពិតប្រាកដរបស់អ្នក
+const firebaseConfig = {
+  apiKey: "AIzaSyBAPjAmSnNC8U_YZiPV-g9Gk5B7YvruMT8",
+  authDomain: "my-website-5a599.firebaseapp.com",
+  projectId: "my-website-5a599",
+  storageBucket: "my-website-5a599.firebasestorage.app",
+  messagingSenderId: "489611180161",
+  appId: "1:40916180161:web:613ff431b1151a3f77cc00",
+};
 
-    // 2. ចាប់ផ្តើម Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    const auth = firebase.auth();
+// 2. ចាប់ផ្តើម Firebase (កុំប្រើ app variable)
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
 
     // 3. បង្កើតប្រព័ន្ធ Comment សាមញ្ញ
     document.getElementById('comment-system').innerHTML = `
